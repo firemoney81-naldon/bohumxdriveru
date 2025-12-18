@@ -1,23 +1,386 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+ 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "운전자보험 갈아타기, 왜 지금 해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 개정된 도로교통법 및 공탁금 제도 변화에 따라 과거 보험으로는 충분한 보장을 받기 어렵습니다. 특히 변호사 선임비용의 선지급 여부와 경찰 조사 단계부터의 보장 범위 확대를 확인해야 합니다."
+        }
+      }, {
+        "@type": "Question",
+        "name": "기존 보험 해지 시 불이익은 없나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "운전자보험은 보장성 보험으로 해약 환급금이 적거나 없을 수 있습니다. 하지만 월 보험료 대비 보장 한도가 크게 개선되었다면 장기적으로 갈아타는 것이 유리합니다."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        /* 다채롭고 부드러운 색감의 현대적 디자인 */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #67b26f;
+            --accent-color: #ff8c00;
+            --bg-color: #f0f4f8;
+            --text-main: #2c3e50;
+            --text-sub: #546e7a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Pretendard", "Noto Sans KR", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            word-break: keep-all;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 6px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #edf7ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px;
+        }
+
+        table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .input-group {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            background: #e67e00;
+        }
+
+        .external-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .external-links a {
+            background: #eee;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        .keyword-cloud {
+            font-size: 0.75rem;
+            color: #ccc;
+            margin-top: 5rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            main { padding: 1rem; margin: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>2026년형 운전자보험 갈아타기 가이드</h1>
+    <p>불필요한 지출은 줄이고, 보장은 극대화하는 스마트한 리모델링 전략</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#why-switch">갈아타기 필요성</a></li>
+        <li><a href="#core-coverage">핵심 보장 분석</a></li>
+        <li><a href="#price-table">보험료 비교표</a></li>
+        <li><a href="#calculator">내 보험 진단</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+    </ul>
+</nav>
+
+<main>
+    <article>
+        <section id="why-switch">
+            <h2>운전자보험 갈아타기, 왜 2026년에 다시 검토해야 할까요?</h2>
+            <p>자동차 사고는 예기치 못한 순간에 발생하며, 법적 환경은 끊임없이 변화합니다. 특히 2026년에는 교통사고 처리 특례법 및 민식이법의 적용 기준이 더욱 구체화되었고, 법원의 공탁금 제도와 변호사 선임 비용 지급 방식이 사용자 중심으로 개편되었습니다. 과거 5년 전, 10년 전에 가입한 운전자보험은 현재의 고액화된 합의금과 변호사 선임 비용을 충당하기에 역부족인 경우가 많습니다.</p>
+            
+            <div class="highlight-box">
+                가장 큰 변화는 <strong>변호사 선임비용의 선지급 서비스</strong> 도입입니다. 과거에는 사고 처리가 종료된 후 비용을 청구했으나, 최신 상품들은 경찰 조사 단계부터 변호사를 선임할 수 있도록 비용을 즉시 지원합니다. 이것이 바로 많은 운전자들이 기존 보험을 해지하고 갈아타기를 선택하는 핵심 이유입니다.
+            </div>
+
+            <p>또한, 스쿨존 내 사고에 대한 처벌이 강화되면서 '벌금 담보'의 한도 역시 상향되었습니다. 과거 2천만 원 한도였던 벌금 보장은 이제 3천만 원 이상으로 상향 조정되어야 안심할 수 있습니다. 6대 중과실 사고뿐만 아니라 12대 중과실 사고에 대한 형사적 책임 범위가 넓어짐에 따라, 본인의 보험이 현재의 법적 기준을 충족하는지 반드시 확인해야 합니다.</p>
+        </section>
+
+        <section id="core-coverage">
+            <h2>갈아타기 시 반드시 체크해야 할 3대 핵심 특약</h2>
+            <p>운전자보험의 본질은 형사적 책임 보장입니다. 다음 세 가지 특약의 한도와 지급 조건을 비교하는 것이 갈아타기의 성공 열쇠입니다.</p>
+
+            <h3>1. 교통사고처리기지원금 (형사합의금)</h3>
+            <p>피해자가 사망하거나 중상해를 입었을 때 지급되는 합의금입니다. 최근에는 피해자 1인당 최대 2억 원까지 보장하는 상품이 출시되었습니다. 과거 3천만 원이나 5천만 원 한도에 머물러 있다면, 실제 사고 발생 시 차액을 본인이 부담해야 하는 위험이 있습니다.</p>
+
+            <h3>2. 변호사 선임비용 (경찰조사 단계 포함)</h3>
+            <p>과거에는 구속되거나 기소된 경우에만 지급되었으나, 이제는 경찰 조사 시점부터 변호사의 도움을 받을 수 있는지가 중요합니다. 특히 음주, 무면허, 도주 사고를 제외한 일반 과실 사고에서 초기 대응은 판결 결과에 지대한 영향을 미칩니다.</p>
+
+            <h3>3. 자동차사고 부상치료비 (자부상)</h3>
+            <p>사고 시 부상 등급(1급~14급)에 따라 지급되는 치료비입니다. 갈아타기를 할 때 가장 많이 고려되는 항목 중 하나로, 단순 타박상에 해당하는 14급 판정 시 얼마를 받는지에 따라 보험의 가성비가 결정됩니다.</p>
+        </section>
+
+        <section id="price-table">
+            <h2>보험사별 운전자보험 보장 한도 비교 (2026년 기준)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>보장 항목</th>
+                        <th>과거 표준 (5년 전)</th>
+                        <th>2026년 신규 표준</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>교통사고처리지원금</td>
+                        <td>3,000만 원 ~ 5,000만 원</td>
+                        <td>최대 2억 원</td>
+                        <td>사망/중상해 포함</td>
+                    </tr>
+                    <tr>
+                        <td>벌금 (대인)</td>
+                        <td>최대 2,000만 원</td>
+                        <td>최대 3,000만 원</td>
+                        <td>스쿨존 사고 대응</td>
+                    </tr>
+                    <tr>
+                        <td>변호사 선임비용</td>
+                        <td>500만 원 (기소 시)</td>
+                        <td>최대 5,000만 원 (경찰조사 포함)</td>
+                        <td>선지급 여부 확인 필수</td>
+                    </tr>
+                    <tr>
+                        <td>자부상 (14급)</td>
+                        <td>10만 원 ~ 20만 원</td>
+                        <td>최대 30만 원</td>
+                        <td>업계 누적 한도 체크</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="calculator">
+            <h2>실시간 운전자보험 갈아타기 자가 진단 및 견적 문의</h2>
+            <p>본인의 현재 운전 스타일과 기존 보험 정보를 입력하시면, 최적의 리모델링 방향을 제시해 드립니다. 아래 정보를 상세히 입력할수록 정확한 분석이 가능합니다.</p>
+            
+            <div class="input-group">
+                <form action="#" method="post">
+                    <label for="current-age">운전자 연령</label>
+                    <input type="number" id="current-age" name="age" placeholder="예: 35">
+
+                    <label for="car-type">주요 운행 차량종류</label>
+                    <select id="car-type" name="car-type">
+                        <option value="sedan">승용차 (자가용)</option>
+                        <option value="truck">화물차 / 트럭</option>
+                        <option value="delivery">배달용 이륜차</option>
+                        <option value="taxi">영업용 (택시/버스)</option>
+                    </select>
+
+                    <label for="existing-premium">현재 납입 중인 월 보험료</label>
+                    <input type="text" id="existing-premium" name="premium" placeholder="예: 15,000원">
+
+                    <label for="driving-history">최근 3년 내 사고 유무</label>
+                    <select id="driving-history" name="history">
+                        <option value="none">사고 없음</option>
+                        <option value="minor">단순 접촉 사고 1회</option>
+                        <option value="major">중과실 사고 또는 2회 이상</option>
+                    </select>
+
+                    <label for="user-request">상세 문의 내용 (갈아타기를 원하는 이유 등)</label>
+                    <textarea id="user-request" name="request" rows="5" placeholder="기존 보장이 부족하다고 느껴지시나요? 구체적인 상황을 적어주세요."></textarea>
+
+                    <button type="submit" class="btn-submit">무료 비교 분석 신청하기</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="highlight-box">
+                <p><strong>Q: 운전자보험을 해지하고 새로 가입하면 손해 아닌가요?</strong></p>
+                <p>A: 운전자보험은 저축 목적이 아닌 위험 대비 목적입니다. 월 1만 원 내외의 소액으로 훨씬 큰 보장(합의금 2억 등)을 받을 수 있다면, 기존의 낮은 보장을 유지하는 것이 오히려 더 큰 기회비용 손실을 초래할 수 있습니다.</p>
+                
+                <p><strong>Q: 자동차보험에 있는 법률지원 특약과 다른 점은 무엇인가요?</strong></p>
+                <p>A: 자동차보험 특약은 해당 차량을 운전할 때만 보장되지만, 운전자보험은 내가 다른 사람의 차를 운전하거나 보행 중 발생하는 사고에 대해서도 보장하는 범위가 훨씬 넓습니다. 또한 자부상과 같은 정액 보장은 운전자보험만의 장점입니다.</p>
+
+                <p><strong>Q: 부부가 함께 보장받는 방법도 있나요?</strong></p>
+                <p>A: 최근에는 '부부 동반 가입' 특약을 통해 개별 가입보다 저렴한 비용으로 두 사람 모두 보장받을 수 있는 상품들이 많습니다.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>신뢰할 수 있는 관련 정보 링크</h2>
+            <p>운전자보험과 관련된 법규 및 통계 정보는 아래 공식 기관에서 확인하실 수 있습니다.</p>
+            <div class="external-links">
+                <a href="https://www.fss.or.kr" target="_blank">금융감독원 (보험사 규제 확인)</a>
+                <a href="https://www.knia.or.kr" target="_blank">손해보험협회 (공시실)</a>
+                <a href="https://www.law.go.kr" target="_blank">국가법령정보센터 (도로교통법)</a>
+                <a href="https://www.police.go.kr" target="_blank">경찰청 (교통사고 통계)</a>
+                <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%EB%B3%B4%ED%97%98" target="_blank">나무위키: 운전자보험 정보</a>
+            </div>
+        </section>
+    </article>
+
+    <div class="keyword-cloud">
+        운전자보험 갈아타기 방법, 보험 리모델링, 다이렉트 운전자보험 비교, 2026년 보험 시장 전망, 교통사고 처리 지원금 한도 상향, 변호사 선임비용 선지급 상품, 민식이법 적용 대상, 스쿨존 과태료 및 벌금, 자부상 14급 보상금액, 보험사별 부지급률, 운전자보험 필요성, 영업용 운전자보험 차이, 화물차 운전자보험 추천, 부부 운전자보험 통합, 무해지 환급형 운전자보험, 만기 환급금 없는 보험, 12대 중과실 사고 범위, 횡단보도 사고 보상, 보행자 보호 의무 강화, 경찰 조사 단계 대응법, 공탁금 제도 활용법, 보험료 절약 노하우, 보험 리모델링 전문가 상담, 비갱신형 운전자보험 장단점, 20년 만기 운전자보험, 80세 만기 설정, 가족 일상생활 배상책임 특약, 자전거 사고 운전자보험, 보복운전 피해 보상, 뺑소니 사고 대처, 무보험차 상해, 자동차보험 운전자보험 차이점, 온라인 보험 가입 혜택, 첫차 운전자 보험료, 여성 운전자보험 추천, 실버 운전자 보험, 고령 운전자 사고 예방, 보험금 청구 서류 안내, 간편 가입 운전자보험, 유병자 운전자보험, 할증 없는 보험, 사고 처리 합의서 작성법, 형사 합의금 산출 기준, 대인 벌금 대물 벌금 차이, 도로교통법 개정안 2026, 자가용 운전자 필수 특약, 배달 라이너 보험, 오토바이 운전자보험, 렌터카 사고 보장, 공유 차량 운전자 보험, 보험 갈아타기 시 주의점, 기존 보험 해지 위약금, 보험료 신용카드 결제, 연말정산 보험료 세액공제, 상해 사망 담보, 후유장해 보장 한도, 응급실 내원비 특약, 골절 진단비 보장, 화상 진단비, 깁스 치료비, 수술비 담보 구성, 갱신 주기 선택 가이드, 보험료 비교 사이트 활용, 맞춤형 보험 설계, 운전자보험 가입 순위, 보험사 재무 건전성, 지급 여력 비율, 민원 많은 보험사 피하기, 착한 운전 마일리지 제도, 교통법규 위반 시 보험료 할증, 속도 위반 벌금 보장, 신호 위반 사고 합의, 중앙선 침범 사고 보장, 앞지르기 방법 위반, 철길 건너목 통과 방법, 보도 침범 사고, 승객 추락 방지 의무, 어린이 보호구역 속도 제한, 음주운전 처벌 수위, 무면허 사고 면책 사항, 도주 사고 보상 불가, 약물 운전 사고, 갱신형 보험의 함정, 보험 다모아 이용법.
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 운전자보험 리모델링 전문 센터. All Rights Reserved.</p>
+    <p>본 사이트는 정보 제공을 목적으로 하며, 실제 가입 시 보험 약관을 반드시 확인하시기 바랍니다.</p>
+</footer>
+
+</body>
 </html>
